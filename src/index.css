@@ -1,0 +1,32 @@
+@import "tailwindcss";
+
+@theme {
+    --color-background: #232f3e;
+}
+
+/* Force Tailwind to use legacy RGB colors instead of oklch */
+@layer base {
+    :root {
+        --color-oklch: initial;
+    }
+}
+
+html, body {
+    @apply overscroll-y-none bg-gray-50;
+    color-scheme: light;
+}
+
+/* Fallback for colors */
+* {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Hide scrollbar completely but allow scrolling */
+.hide-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+.hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
