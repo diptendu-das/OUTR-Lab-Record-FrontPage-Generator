@@ -4,7 +4,7 @@
     --color-background: #232f3e;
 }
 
-/* Force Tailwind to use legacy RGB colors instead of oklch */
+/* Force Tailwind to use legacy RGB colors instead of oklch *DOUBT*/
 @layer base {
     :root {
         --color-oklch: initial;
@@ -16,13 +16,13 @@ html, body {
     color-scheme: light;
 }
 
-/* Fallback for colors */
+/* Fallback for colors DOUBT*/
 * {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
 }
 
-/* Hide scrollbar completely but allow scrolling */
+/* Hide scrollbar */
 .hide-scrollbar::-webkit-scrollbar {
     display: none;
 }

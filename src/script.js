@@ -24,7 +24,9 @@ export async function downloadPDF() {
 
         pdf.addImage(imgData, "PNG", 0, 0, pdfWidth, pdfHeight);
         pdf.save("Lab_Record_Cover.pdf");
+        return true;
     } catch (error) {
         console.error("Failed to generate PDF:", error);
+        return false;
     }
 }

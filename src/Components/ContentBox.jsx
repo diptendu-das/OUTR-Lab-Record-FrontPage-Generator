@@ -21,7 +21,7 @@ export const ContentBox = ({ downloadPDF }) => {
         headingColor: 'rgb(103, 74, 130)',
         teacher1: '',
         teacher2: '',
-        boxThemeColor: '#e0f2fe',
+        boxThemeColor: '#ADD8E6',
     }
     const [formData, setFormData] = useState(initialFormData)
     const [isSubmitTo, setIsSubmitTo] = useState(false)

@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Info } from 'lucide-react';
 
 export const Form = ({ formData, handleChange, handleReset, isSubmitTo, setIsSubmitTo, boxThemeToggle, setBoxThemeToggle, downloadPDF }) => {
+    const [showTooltip, setShowTooltip] = useState(false);
 
     return (
         <div id="form-container" className="w-full lg:w-1/2 bg-slate-100 border-r border-slate-300 p-6 lg:p-10 flex flex-col items-center overflow-y-auto hide-scrollbar relative" style={{ maxHeight: '100vh' }}>
@@ -57,7 +58,7 @@ export const Form = ({ formData, handleChange, handleReset, isSubmitTo, setIsSub
                                     <div className="w-6 h-6 rounded-full shadow-inner border-2 border-white ring-1 ring-slate-200 hover:ring-blue-300 transition-all pointer-events-none" style={{ backgroundColor: formData.deptColor }}></div>
                                 </div>
                             </div>
-                            <input type="text" name="deptName" value={formData.deptName} onChange={handleChange} placeholder="e.g. Electrical Engineering" className="bg-slate-50/50 border border-slate-200 rounded-xl px-4 py-2.5 text-sm text-slate-800 placeholder:text-slate-400 focus:bg-white focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 outline-none transition-all shadow-sm" />
+                            <input type="text" name="deptName" value={formData.deptName} onChange={handleChange} placeholder="e.g. School of Electrical Sciences" className="bg-slate-50/50 border border-slate-200 rounded-xl px-4 py-2.5 text-sm text-slate-800 placeholder:text-slate-400 focus:bg-white focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 outline-none transition-all shadow-sm" />
                         </div>
 
                         <div className="flex flex-col gap-2 md:col-span-2 group">
@@ -93,27 +94,27 @@ export const Form = ({ formData, handleChange, handleReset, isSubmitTo, setIsSub
                     <div className="grid grid-cols-2 gap-x-4 gap-y-5">
                         <div className="flex flex-col gap-2 group">
                             <label className="text-sm font-semibold text-slate-700 group-focus-within:text-blue-600 transition-colors">Regd. No / Roll No</label>
-                            <input type="text" name="regdNo" value={formData.regdNo} onChange={handleChange} placeholder="e.g. 2201011200" className="bg-slate-50/50 border border-slate-200 rounded-xl px-4 py-2.5 text-sm text-slate-800 placeholder:text-slate-400 focus:bg-white focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 outline-none transition-all shadow-sm" />
+                            <input type="text" name="regdNo" value={formData.regdNo} onChange={handleChange} placeholder="e.g. 24110569" className="bg-slate-50/50 border border-slate-200 rounded-xl px-4 py-2.5 text-sm text-slate-800 placeholder:text-slate-400 focus:bg-white focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 outline-none transition-all shadow-sm" />
                         </div>
                         <div className="flex flex-col gap-2 group">
                             <label className="text-sm font-semibold text-slate-700 group-focus-within:text-blue-600 transition-colors">Branch</label>
-                            <input type="text" name="branch" value={formData.branch} onChange={handleChange} placeholder="e.g. CSE" className="bg-slate-50/50 border border-slate-200 rounded-xl px-4 py-2.5 text-sm text-slate-800 placeholder:text-slate-400 focus:bg-white focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 outline-none transition-all shadow-sm" />
+                            <input type="text" name="branch" value={formData.branch} onChange={handleChange} placeholder="e.g. EE" className="bg-slate-50/50 border border-slate-200 rounded-xl px-4 py-2.5 text-sm text-slate-800 placeholder:text-slate-400 focus:bg-white focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 outline-none transition-all shadow-sm" />
                         </div>
                         <div className="flex flex-col gap-2 group">
                             <label className="text-sm font-semibold text-slate-700 group-focus-within:text-blue-600 transition-colors">Semester</label>
-                            <input type="text" name="semester" value={formData.semester} onChange={handleChange} placeholder="e.g. 5th" className="bg-slate-50/50 border border-slate-200 rounded-xl px-4 py-2.5 text-sm text-slate-800 placeholder:text-slate-400 focus:bg-white focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 outline-none transition-all shadow-sm" />
+                            <input type="text" name="semester" value={formData.semester} onChange={handleChange} placeholder="e.g. 4th" className="bg-slate-50/50 border border-slate-200 rounded-xl px-4 py-2.5 text-sm text-slate-800 placeholder:text-slate-400 focus:bg-white focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 outline-none transition-all shadow-sm" />
                         </div>
                         <div className="flex flex-col gap-2 group">
                             <label className="text-sm font-semibold text-slate-700 group-focus-within:text-blue-600 transition-colors">Section</label>
-                            <input type="text" name="section" value={formData.section} onChange={handleChange} placeholder="e.g. A" className="bg-slate-50/50 border border-slate-200 rounded-xl px-4 py-2.5 text-sm text-slate-800 placeholder:text-slate-400 focus:bg-white focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 outline-none transition-all shadow-sm" />
+                            <input type="text" name="section" value={formData.section} onChange={handleChange} placeholder="e.g. B" className="bg-slate-50/50 border border-slate-200 rounded-xl px-4 py-2.5 text-sm text-slate-800 placeholder:text-slate-400 focus:bg-white focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 outline-none transition-all shadow-sm" />
                         </div>
                         <div className="flex flex-col gap-2 group">
                             <label className="text-sm font-semibold text-slate-700 group-focus-within:text-blue-600 transition-colors">Group</label>
-                            <input type="text" name="group" value={formData.group} onChange={handleChange} placeholder="e.g. G1" className="bg-slate-50/50 border border-slate-200 rounded-xl px-4 py-2.5 text-sm text-slate-800 placeholder:text-slate-400 focus:bg-white focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 outline-none transition-all shadow-sm" />
+                            <input type="text" name="group" value={formData.group} onChange={handleChange} placeholder="e.g. G2" className="bg-slate-50/50 border border-slate-200 rounded-xl px-4 py-2.5 text-sm text-slate-800 placeholder:text-slate-400 focus:bg-white focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 outline-none transition-all shadow-sm" />
                         </div>
                         <div className="flex flex-col gap-2 group">
                             <label className="text-sm font-semibold text-slate-700 group-focus-within:text-blue-600 transition-colors">Subgroup <span className="text-slate-400 font-normal">(Opt)</span></label>
-                            <input type="text" name="subGroup" value={formData.subGroup} onChange={handleChange} placeholder="e.g. S1" className="bg-slate-50/50 border border-slate-200 rounded-xl px-4 py-2.5 text-sm text-slate-800 placeholder:text-slate-400 focus:bg-white focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 outline-none transition-all shadow-sm" />
+                            <input type="text" name="subGroup" value={formData.subGroup} onChange={handleChange} placeholder="e.g. 2" className="bg-slate-50/50 border border-slate-200 rounded-xl px-4 py-2.5 text-sm text-slate-800 placeholder:text-slate-400 focus:bg-white focus:ring-2 focus:ring-blue-500/20 focus:border-blue-500 outline-none transition-all shadow-sm" />
                         </div>
                     </div>
                 </div>
@@ -147,8 +148,10 @@ export const Form = ({ formData, handleChange, handleReset, isSubmitTo, setIsSub
                             </div>
                             <div className="relative flex items-center gap-1.5 group/tooltip">
                                 <span className="text-sm font-semibold text-slate-700 group-hover:text-blue-700 transition-colors">Wrap Output in Styled Boxes</span>
-                                <Info className="w-4 h-4 text-slate-400 group-hover:text-blue-500 transition-colors" />
-                                <div className="absolute left-1/2 -translate-x-1/2 bottom-full mb-2 w-48 p-2.5 bg-slate-800 text-slate-100 leading-tight text-xs text-center rounded-lg shadow-xl opacity-0 invisible group-hover/tooltip:opacity-100 group-hover/tooltip:visible transition-all z-50 pointer-events-none font-medium">
+                                <button type="button" onClick={(e) => { e.preventDefault(); setShowTooltip(!showTooltip); }} onBlur={() => setShowTooltip(false)} className="focus:outline-none">
+                                    <Info className="w-4 h-4 text-slate-400 hover:text-blue-500 focus:text-blue-500 transition-colors cursor-pointer" />
+                                </button>
+                                <div className={`absolute left-1/2 -translate-x-1/2 bottom-full mb-2 w-48 p-2.5 bg-slate-800 text-slate-100 leading-tight text-xs text-center rounded-lg shadow-xl transition-all z-50 pointer-events-none font-medium ${showTooltip ? 'opacity-100 visible' : 'opacity-0 invisible group-hover/tooltip:opacity-100 group-hover/tooltip:visible'}`}>
                                     It is an optional feature under testing, so may not work properly, so try to avoid it
                                     <div className="absolute top-full left-1/2 -translate-x-1/2 border-x-4 border-x-transparent border-t-4 border-t-slate-800"></div>
                                 </div>
@@ -180,7 +183,7 @@ export const Form = ({ formData, handleChange, handleReset, isSubmitTo, setIsSub
 
                 {/* --- Actions --- */}
                 <div className="flex flex-col sm:flex-row justify-end gap-4 mt-4 mb-16 lg:mb-8">
-                    <button type="button" onClick={handleReset} className="px-6 py-3.5 rounded-2xl font-semibold text-slate-600 bg-white border border-slate-200 shadow-sm hover:bg-slate-50 hover:text-red-500 hover:border-red-200 transition-all active:scale-95 focus:outline-none focus:ring-4 focus:ring-slate-100">
+                    <button type="button" onClick={handleReset} className="px-6 py-3.5 rounded-2xl font-semibold text-slate-600 bg-white border border-slate-200 shadow-sm hover:bg-slate-50 hover:text-red-500 hover:border-red-200 transition-all active:scale-95 focus:outline-none focus:ring-4 focus:ring-slate-100 focus:text-red-500 focus:border-red-200">
                         Reset Data
                     </button>
                     <button type="button" onClick={downloadPDF} className="px-8 py-3.5 rounded-2xl font-bold text-white bg-gradient-to-r from-blue-600 to-indigo-600 shadow-lg shadow-blue-500/30 hover:shadow-xl hover:shadow-blue-600/40 hover:-translate-y-0.2 hover:bg-gradient-to-r hover:from-blue-700 hover:to-indigo-500 transition-all active:scale-95 active:translate-y-0 flex items-center justify-center gap-2 focus:outline-none focus:ring-4 focus:ring-blue-500/30">

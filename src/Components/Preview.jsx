@@ -22,7 +22,7 @@ export const Preview = ({ formData, isSubmitTo, boxThemeToggle }) => {
                         >ODISHA UNIVERSITY OF TECHNOLOGY AND RESEARCH, BHUBANESWAR</p>
                         <img src={OUTR_LOGO} alt="OUTR, Bhubaneswar" className="w-30" />
 
-                        <div id="labName" className="pt-3  flex flex-col justify-center items-center">
+                        <div id="labName" className="pt-3  flex flex-col justify-center items-center leading-tight">
                             <span id="prevDept" className="font-bold text-center text-[17px]" style={{ color: `${formData.deptColor}` }}>{formData.deptName || 'Dept/School:__________'}</span>
                             <span id="prevSubject" className="font-bold text-center text-[15px]" style={{ color: `${formData.labSubjectColor}` }}>{formData.labSubject || 'Lab Name:__________'}</span>
                             <p className="labName" >
@@ -34,14 +34,14 @@ export const Preview = ({ formData, isSubmitTo, boxThemeToggle }) => {
                         <div id="DataBox" className="flex gap-8 m-5 text-[11px] font-bold">
 
 
-                            {isSubmitTo && (<div id="SubmittedTo" className="flex flex-col text-[11px]" style={boxStyle}>
+                            {isSubmitTo && (<div id="SubmittedTo" className="flex flex-col text-[11px] leading-tight " style={boxStyle}>
                                 <h2 className=" text-[14px] font-bold" id="STH" style={{ color: `${formData.headingColor}` }}>Submitted To:</h2>
                                 <p className=""><span id="prevTeacher1">{formData.teacher1 || 'Teacher 1:__________'}</span></p>
                                 <p className=""><span id="prevTeacher2">{formData.teacher2 || 'Teacher 2:__________'}</span></p>
                             </div>)}
 
 
-                            <div id="SubmittedBy" className="flex flex-col text-[11px]" style={boxStyle}>
+                            <div id="SubmittedBy" className="flex flex-col text-[11px] leading-tight " style={boxStyle}>
                                 <h2 className="text-[14px] font-bold" id="SBH" style={{ color: `${formData.headingColor}` }}>Submitted By:</h2>
                                 <p className=""><span>Name:</span> <span id="prevName">{formData.fullName || '___________'}</span></p>
                                 <p className=""><span>Regd. No:</span> <span id="prevRoll">{formData.regdNo || '___________'}</span></p>
